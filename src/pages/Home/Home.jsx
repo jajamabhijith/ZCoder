@@ -14,8 +14,9 @@ const Home = () => {
 
   useEffect(() => {
     const fetchContests = async () => {
-      const username = 'shraman1507';
-      const apiKey = '738ba004d8e3e434774b366ec26692422912b96f';
+      const username = import.meta.env.VITE_CLIST_USERNAME;
+      const apiKey = import.meta.env.VITE_CLIST_API_KEY;
+
       const currentDate = new Date().toISOString();
       const pastDate = new Date(new Date().setDate(new Date().getDate() - 30)).toISOString();
 

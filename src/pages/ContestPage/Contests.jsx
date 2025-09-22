@@ -66,8 +66,9 @@ const Contests = () => {
 
   useEffect(() => {
     const fetchContests = async () => {
-      const username = 'shraman1507';
-      const apiKey = '738ba004d8e3e434774b366ec26692422912b96f';
+      const username = import.meta.env.VITE_CLIST_USERNAME;
+      const apiKey = import.meta.env.VITE_CLIST_API_KEY;
+
       const currentDate = new Date().toISOString();
       const url = `https://clist.by/api/v1/contest/?username=${username}&api_key=${apiKey}&start__gt=${currentDate}&resource__id__in=1,2,102,93&limit=10`;
 

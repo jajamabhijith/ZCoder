@@ -62,53 +62,14 @@ const Questions = () => {
     return <div>{error}</div>;
   }
   const totalPages = Math.ceil(filteredProblems.length / questionsPerPage);
-  // // Calculate the total number of pages
-  // const totalPages = Math.ceil(filteredProblems.length / questionsPerPage);
-
-  // // Determine the range of pagination buttons to display
-  // let startPage = 1;
-  // let endPage = totalPages;
-  // if (totalPages > 4) {
-  //   if (currentPage <= 2) {
-  //     endPage = 4;
-  //   } else if (currentPage >= totalPages - 1) {
-  //     startPage = totalPages - 3;
-  //   } else {
-  //     startPage = currentPage - 1;
-  //     endPage = currentPage + 1;
-  //   }
-  // }
-
-  // // Get unique tags
-  // const allTags = [...new Set(problems.flatMap(problem => problem.topicTags.map(tag => tag.name)))];
-
-  // const handleTagChange = (tag) => {
-  //   setSelectedTags(prevSelectedTags =>
-  //     prevSelectedTags.includes(tag)
-  //       ? prevSelectedTags.filter(t => t !== tag)
-  //       : [...prevSelectedTags, tag]
-  //   );
-  //   setCurrentPage(1); // Reset to the first page when the filter changes
-  // };
+  
 
   return (
     <>
     <div className="questions-list">
       {/* Tag Filter Checkboxes */}
       <TagFilter tags={allTags} selectedTags={selectedTags} onTagChange={handleTagChange} />
-      {/* <div className="tag-filters">
-        {allTags.map(tag => (
-          <label key={tag}>
-            <input
-              type="checkbox"
-              value={tag}
-              checked={selectedTags.includes(tag)}
-              onChange={() => handleTagChange(tag)}
-            />
-            <span>{tag}</span>
-          </label>
-        ))}
-      </div> */}
+      
 
 
       {currentQuestions.map((problem, index) => (
@@ -132,21 +93,7 @@ const Questions = () => {
 
       {/* Pagination Controls */}
       
-      {/* <div className="pagination">
-        <button onClick={() => paginate(1)}>First</button>
-        {startPage > 1 && <span>...</span>}
-        {Array.from({ length: endPage - startPage + 1 }).map((_, index) => (
-          <button 
-            key={startPage + index} 
-            onClick={() => paginate(startPage + index)}
-            className={currentPage === startPage + index ? 'active' : ''}
-          >
-            {startPage + index}
-          </button>
-        ))}
-        {endPage < totalPages && <span>...</span>}
-        <button onClick={() => paginate(totalPages)}>Last</button>
-      </div> */}
+      
     </div>
     <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
   </>

@@ -72,19 +72,7 @@ const BookmarkedSolutions = () => {
         // Update the state with the new array of bookmarked questions
         setBookmarkedQuestions(updatedBookmarkedQuestions);
   
-        // setBookmarkedQuestions((prevBookmarkedQuestions) => {
-        //   const updatedQuestions = prevBookmarkedQuestions.map((question) => {
-        //     if (question.titleSlug=== titleSlug) {
-        //       return {
-        //         ...question,
-        //         solutions: question.solutions.filter((solution) => solution._id !== sol._id),
-        //       };
-        //     }
-        //     return question;
-        //   });
-        //   return updatedQuestions;
-        // });
-        // setBookmarkedQuestions((prevBookmarkedQuestions) => prevBookmarkedQuestions.filter((id) => id!== sol._id));
+
         alert('Solution unbookmarked successfully');
       } else {
         const errorResponse = await response.json();

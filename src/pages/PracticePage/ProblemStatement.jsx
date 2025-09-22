@@ -60,14 +60,7 @@ const ProblemStatement = () => {
     }
   };
   
-  // const [bookmarks, setBookmarks] = useState(() => {
-  //   const storedBookmarks = localStorage.getItem('bookmarks');
-  //   return storedBookmarks? JSON.parse(storedBookmarks) : [];
-  // });
-  
-  // useEffect(() => {
-  //   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-  // }, [bookmarks]);
+
 
 
   useEffect(() => {
